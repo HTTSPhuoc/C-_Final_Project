@@ -1,0 +1,557 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace ĐỒ_ÁN_CƠ_SỞ_LẬP_TRÌNH___NHÓM_12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
+        Sinhvien:
+            Console.Clear();
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine("ĐỒ ÁN CƠ SỞ LẬP TRÌNH");
+            Console.WriteLine("NHÓM: 12");
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine("Các thành viên nhóm: ");
+            Console.WriteLine("1. Nguyễn Phương Thảo - 31221023052 - Trưởng nhóm");
+            Console.WriteLine("2. Nguyễn Vũ Phước - 31221025186");
+            Console.WriteLine("3. Đề nhóm: Đề chẵn - Nhóm 12");
+            Console.WriteLine("---------------------------------------------------");
+
+
+            Console.Write("Chọn số thứ tự tướng ứng với phần bạn muốn thực hiện: ");
+            int luachon = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            if (luachon == 1)
+            {
+            Chuongtrinh:
+                Console.Clear();
+                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine("Nguyễn Phương Thảo - 31221023052 - STT.33");
+                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine("1. Nhập vào 1 số N nguyên dương. Cho biết N có phải là bội số của 3 và 5?");
+                Console.WriteLine("2. Sắp xếp các phần tử trong một mảng gồm n số nguyên theo thứ tự từ nhỏ đến lớn");
+                Console.WriteLine("3. Nhập các phần tử của ma trận vuông cấp n, in ra ma trận chuyển vị của nó.");
+                Console.WriteLine("----------------------------------------------------------------------------------");
+                Console.Write("Hãy chọn bài làm mà bạn muốn thực hiện tương ứng với số thứ tự bên trái của đề bài: ");
+                int bailam = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+
+
+                if (bailam == 1)
+                {
+                    int N;
+                Batdau:
+                    Console.Clear();
+
+
+                    do
+                    {
+                        Console.Write("Nhập số nguyên dương N: ");
+                        string inputn = Console.ReadLine();
+                        if (!Int32.TryParse(inputn, out N) || (N <= 0))
+                        {
+                            Console.WriteLine("Số không hợp lệ! Vui lòng nhập lại!");
+                            Console.WriteLine("---------------");
+                            continue;
+                        }
+                        break;
+                    }
+                    while (true);
+
+
+
+
+                    if (N % 3 == 0 && N % 5 == 0)
+                    {
+                        Console.WriteLine(N + " là bội số của 3 và 5.");
+                    }
+                    else
+                    {
+                        Console.WriteLine(N + " không phải là bội số của 3 và 5.");
+                    }
+
+
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("Nhấn phím 1 để chạy lại chương trình");
+                    Console.WriteLine("Nhấn phím 2 để chọn bài làm khác của Thảo");
+                    Console.WriteLine("Nhấn phím 3 để chọn sinh viên khác");
+                    int chon = int.Parse(Console.ReadLine());
+                    if (chon == 1)
+                    {
+                        goto Batdau;
+                    }
+                    if (chon == 2)
+                    {
+                        goto Chuongtrinh;
+                    }
+                    if (chon == 3)
+                    {
+                        goto Sinhvien;
+                    }
+                    else
+                    {
+                        goto Chuongtrinh;
+                    }
+
+
+                }
+                if (bailam == 2)
+                {
+                    int n;
+
+
+                Batdau:
+                    Console.Clear();
+
+
+                    do
+                    {
+                        Console.Write("Nhập kích thước n của mảng: ");
+                        string inputn = Console.ReadLine();
+                        if (!Int32.TryParse(inputn, out n) || (n <= 0))
+                        {
+                            Console.WriteLine("Số không hợp lệ! Vui lòng nhập lại!");
+                            Console.WriteLine("---------------");
+                            continue;
+                        }
+                        break;
+                    }
+                    while (true);
+
+
+                    int[] intArray = new int[n];
+                    for (int i = 0; i < n; i++)
+                    {
+                        Console.Write("Phần tử thứ {0} của mảng là: ", i);
+                        intArray[i] = int.Parse(Console.ReadLine());
+                    }
+
+
+                    for (int i = 0; i < n - 1; i++)
+                    {
+                        for (int j = 0; j < n - i - 1; j++)
+                        {
+                            if (intArray[j] > intArray[j + 1])
+                            {
+                                int temp = intArray[j];
+                                intArray[j] = intArray[j + 1];
+                                intArray[j + 1] = temp;
+                            }
+                        }
+                    }
+
+
+                    Console.WriteLine("Sắp xếp theo thứ tự từ nhỏ đến lớn: ");
+                    for (int i = 0; i < n; i++)
+                    {
+                        Console.Write(intArray[i] + "   ");
+                    }
+                    Console.WriteLine();
+
+
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("Nhấn phím 1 để chạy lại chương trình");
+                    Console.WriteLine("Nhấn phím 2 để chọn bài làm khác của Thảo");
+                    Console.WriteLine("Nhấn phím 3 để chọn sinh viên khác");
+                    int chon = int.Parse(Console.ReadLine());
+                    if (chon == 1)
+                    {
+                        goto Batdau;
+                    }
+                    if (chon == 2)
+                    {
+                        goto Chuongtrinh;
+                    }
+                    if (chon == 3)
+                    {
+                        goto Sinhvien;
+                    }
+                    else
+                    {
+                        goto Chuongtrinh;
+                    }
+
+
+                }
+                if (bailam == 3)
+                {
+                    int n;
+
+
+                Batdau:
+                    Console.Clear();
+
+
+                    do
+                    {
+                        Console.Write("Nhập cấp n của ma trận vuông A: ");
+                        string inputn = Console.ReadLine();
+                        if (!Int32.TryParse(inputn, out n) || (n <= 0))
+                        {
+                            Console.WriteLine("Số không hợp lệ! Vui lòng nhập lại!");
+                            Console.WriteLine("---------------");
+                            continue;
+                        }
+                        break;
+                    }
+                    while (true);
+
+
+                    int[,] A = new int[n, n];
+                    Console.WriteLine("Nhập các phần tử trong ma trận vuông cấp {0}.", n);
+                    for (int i = 0; i < n; i++)
+                    {
+                        for (int j = 0; j < n; j++)
+                        {
+                            Console.Write("A[{0},{1}] = ", i, j);
+                            A[i, j] = int.Parse(Console.ReadLine());
+                        }
+                    }
+
+
+                    Console.WriteLine("Ma trận vuông cấp {0}:", n);
+                    for (int i = 0; i < n; i++)
+                    {
+                        for (int j = 0; j < n; j++)
+                        {
+                            Console.Write("{0} ", A[i, j]);
+                        }
+                        Console.WriteLine();
+                    }
+
+
+                    Console.WriteLine("Ma trận chuyển vị của ma trận vuông cấp {0}:", n);
+                    for (int i = 0; i < n; i++)
+                    {
+                        for (int j = 0; j < n; j++)
+                        {
+                            Console.Write("{0} ", A[j, i]);
+                        }
+                        Console.WriteLine();
+                    }
+
+
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("Nhấn phím 1 để chạy lại chương trình");
+                    Console.WriteLine("Nhấn phím 2 để chọn bài làm khác của Thảo");
+                    Console.WriteLine("Nhấn phím 3 để chọn sinh viên khác");
+                    int chon = int.Parse(Console.ReadLine());
+                    if (chon == 1)
+                    {
+                        goto Batdau;
+                    }
+                    if (chon == 2)
+                    {
+                        goto Chuongtrinh;
+                    }
+                    if (chon == 3)
+                    {
+                        goto Sinhvien;
+                    }
+                    else
+                    {
+                        goto Chuongtrinh;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Bài làm không tồn tại. Nhấn phím Enter để nhập lại!");
+                    Console.ReadKey();
+                    goto Chuongtrinh;
+                }
+            }
+            if (luachon == 2)
+            {
+            Chuongtrinh:
+                Console.Clear();
+                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine("Nguyễn Vũ Phước - 312210250186 - STT.29");
+                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine("1. Tìm bán kính hình cầu có thể tích tương đương hình hộp chữ nhật có số đo ba chiều a, b, c");
+                Console.WriteLine("2. Cho dãy các quả cân sau: 1g, 2g, 4g, 8g, 16g, 32g, 64g, 128g, 256g.Nhập trọng lượng M (M<512g),\ncho biết các quả cân sẽ sử dụng để cân vật có trọng lượng M ( mỗi quả cân dùng tối đa 1 lần)");
+                Console.WriteLine("3. Nhập ma trận vuông cấp n. Cho biết trong ma trận vừa nhập có 2 hàng nào trùng nhau hay không,nếu có thì cho biết hai hàng nào.");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------");
+                Console.Write("Hãy chọn bài làm mà bạn muốn thực hiện tương ứng với số thứ tự bên trái của đề bài: ");
+                int bailam = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+
+
+
+
+                if (bailam == 1)
+                {
+                    int a, b, c;
+                Batdau:
+                    Console.Clear();
+                    do
+                    {
+                        Console.Write("Nhập vào chiều dài a: ");
+                        string inputa = Console.ReadLine();
+                        Console.Write("Nhập vào chiều rộng b: ");
+                        string inputb = Console.ReadLine();
+                        Console.Write("Nhập vào chiều cao c: ");
+                        string inputc = Console.ReadLine();
+                        if (!Int32.TryParse(inputa, out a) || (a <= 0) || !Int32.TryParse(inputb, out b) || (b <= 0) || !Int32.TryParse(inputc, out c) || (c <= 0))
+                        {
+                            Console.WriteLine("Nhập lại a, b, c phải lớn hơn 0!");
+                            Console.WriteLine("---------------------------------");
+                            continue;
+                        }
+                        break;
+                    }
+                    while (true);
+                    if (a > 0 && b > 0 && c > 0)
+                    {
+                        double R = (double)Math.Pow((3 * a * b * c) / (4 * Math.PI), 1.0 / 3.0);
+                        Console.WriteLine("Bán kính hình cầu là: R = {0}", R);
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine("----------------------------------------");
+                    Console.WriteLine("Nhấn phím 1 để chạy lại chương trình");
+                    Console.WriteLine("Nhấn phìm 2 để thoát chương trình");
+                    int chon = int.Parse(Console.ReadLine());
+                    if (chon == 1)
+                    {
+                        goto Batdau;
+                    }
+                    if (chon == 2)
+                    {
+                        goto Chuongtrinh;
+                    }
+                    if (chon == 3)
+                    {
+                        goto Sinhvien;
+                    }
+                    else
+                    {
+                        goto Chuongtrinh;
+                    }
+                }
+                if (bailam == 2)
+                {
+                    int M;
+                    int[] quacan = new int[] { 1, 2, 4, 8, 16, 32, 64, 128, 256 };
+                Batdau:
+                    Console.Clear();
+                    do
+                    {
+                        Console.Write("Nhập trọng lượng M (M < 512g): ");
+                        string inputM = (Console.ReadLine());
+                        if (!Int32.TryParse(inputM, out M) || (M > 512) || (M < 0))
+                        {
+                            Console.WriteLine("Trọng lượng M phải nhỏ hơn 512g và lớn hơn 0");
+                            Console.WriteLine("----------------------------------------------");
+                            continue;
+                        }
+                        break;
+                    }
+                    while (true);
+                    Console.Write("Những quả cân cần để cân vật có trọng lượng M {0}g là: ", M);
+                    for (int i = quacan.Length - 1; i >= 0; i--)
+                        if (M >= quacan[i])
+                        {
+                            Console.Write(quacan[i] + "g" + " ");
+                            M = M - quacan[i];
+                        }
+                    Console.WriteLine();
+                    Console.WriteLine("----------------------------------------");
+                    Console.WriteLine("Nhấn phím 1 để chạy lại chương trình");
+                    Console.WriteLine("Nhấn phìm 2 để thoát chương trình");
+                    int chon = int.Parse(Console.ReadLine());
+                    if (chon == 1)
+                    {
+                        goto Batdau;
+                    }
+                    if (chon == 2)
+                    {
+                        goto Chuongtrinh;
+                    }
+                    if (chon == 3)
+                    {
+                        goto Sinhvien;
+                    }
+                    else
+                    {
+                        goto Chuongtrinh;
+                    }
+                }
+                if (bailam == 3)
+                {
+                    int n;
+                Batdau:
+                    Console.Clear();
+                    do
+                    {
+                        Console.Write("Nhập cấp của ma trận vuông: ");
+                        string inputn = Console.ReadLine();
+                        if (!Int32.TryParse(inputn, out n) || (n <= 0))
+                        {
+                            Console.WriteLine("Số không hợp lệ! Vui lòng nhập lại!");
+                            Console.WriteLine("-------------------------------------");
+                            continue;
+                        }
+                        break;
+                    }
+                    while (true);
+                    int[,] matran = new int[n, n];
+                    Console.WriteLine("Nhập giá trị cho ma trận:");
+                    for (int i = 0; i < n; i++)
+                    {
+                        for (int j = 0; j < n; j++)
+                        {
+                            Console.Write($"matran[{i}, {j}] = ");
+                            matran[i, j] = int.Parse(Console.ReadLine());
+                        }
+                    }
+
+
+                    bool trungnhau = false;
+                    int hang1 = -1, hang2 = -1;
+
+
+                    for (int i = 0; i < n - 1; i++)
+                    {
+                        for (int j = i + 1; j < n; j++)
+                        {
+                            bool bangnhau = true;
+
+
+                            for (int k = 0; k < n; k++)
+                            {
+                                if (matran[i, k] != matran[j, k])
+                                {
+                                    bangnhau = false;
+                                    break;
+                                }
+                            }
+
+
+                            if (bangnhau)
+                            {
+                                trungnhau = true;
+                                hang1 = i + 1;
+                                hang2 = j + 1;
+                                break;
+                            }
+                        }
+
+
+                        if (trungnhau) break;
+                    }
+
+
+                    if (trungnhau)
+                    {
+                        Console.WriteLine($"Hai hàng {hang1} và {hang2} trùng nhau.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Không có hai hàng nào trùng nhau.");
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------");
+                    Console.WriteLine("Nhấn phím 1 để chạy lại chương trình");
+                    Console.WriteLine("Nhấn phím 2 để chọn bài làm khác của Phước");
+                    Console.WriteLine("Nhấn phím 3 để chọn sinh viên khác");
+                    int chon = int.Parse(Console.ReadLine());
+                    if (chon == 1)
+                    {
+                        goto Batdau;
+                    }
+                    if (chon == 2)
+                    {
+                        goto Chuongtrinh;
+                    }
+                    if (chon == 3)
+                    {
+                        goto Sinhvien;
+                    }
+                    else
+                    {
+                        goto Chuongtrinh;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Bài làm không tồn tại. Nhấn phím Enter để nhập lại!");
+                    Console.ReadKey();
+                    goto Chuongtrinh;
+                }
+            }
+            if (luachon == 3)
+            {
+                Console.Clear();
+                string[,] lopSV =
+            {
+                {"A","2004","9.0","Giỏi"}, {"B","2004","9.0","Giỏi"},{"C","2004","7.5","Khá"},{"D","2003","6.0","Trung bình"},{"E","2004","4.5","Yếu"}
+            };
+
+
+                // Lấy điểm trung bình của mỗi sinh viên
+                double[] diemTrungBinh = new double[lopSV.GetLength(0)];
+                for (int i = 0; i < lopSV.GetLength(0); i++)
+                {
+                    diemTrungBinh[i] = double.Parse(lopSV[i, 2]);
+                }
+
+
+                // Lấy thứ hạng của mỗi sinh viên
+                int[] XepHang = new int[lopSV.GetLength(0)];
+                for (int i = 0; i < diemTrungBinh.Length; i++)
+                {
+                    int rank = 1;
+                    for (int j = 0; j < diemTrungBinh.Length; j++)
+                    {
+                        if (diemTrungBinh[j] > diemTrungBinh[i])
+                        {
+                            rank++;
+                        }
+                    }
+                    XepHang[i] = rank;
+                }
+
+
+                for (int i = 0; i < lopSV.GetLength(0); i++)
+                {
+                    Console.WriteLine("----------------------------------");
+                    Console.WriteLine("BẢNG ĐIỂM TỐT NGHIỆP");
+                    Console.WriteLine("Cấp cho sinh viên {0}, năm sinh {1}.", lopSV[i, 0], lopSV[i, 1]);
+                    Console.WriteLine("Trong kì thi tốt nghiệp 2021, sinh viên trên đã đạt điểm trung bình là {0}, và được xếp loại {1}. Sinh viên có thứ hạng {2} trong lớp.", lopSV[i, 2], lopSV[i, 3], XepHang[i]);
+                    Console.WriteLine("Hiệu Trưởng Trường Đại học ABC.");
+                    Console.WriteLine("Kí tên, Đóng dấu");
+                    Console.WriteLine("----------------------------------");
+                }
+                Console.WriteLine("Nhấn phím 0 để chọn chương trình khác");
+                int chon = int.Parse(Console.ReadLine());
+                if (chon == 0)
+                {
+                    goto Sinhvien;
+                }
+                else
+                {
+                    goto Sinhvien;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Sinh viên không tồn tại. Nhấn phím Enter để nhập lại!");
+                Console.ReadKey();
+                goto Sinhvien;
+            }
+            Console.ReadKey();
+
+
+        }
+    }
+}
