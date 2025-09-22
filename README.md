@@ -2,7 +2,7 @@
 
 ## 📖 Giới thiệu
 Đây là đồ án kết thúc môn **Cơ sở lập trình** (Nhóm 12).  
-Dự án được phát triển bằng ngôn ngữ **C#**, dưới dạng ứng dụng console, nhằm thực hành các kiến thức cơ bản về cấu trúc điều khiển, mảng, ma trận, vòng lặp và xử lý dữ liệu:contentReference[oaicite:0]{index=0}.
+Dự án được phát triển bằng ngôn ngữ **C#**, dưới dạng ứng dụng console, nhằm thực hành các kiến thức cơ bản về cấu trúc điều khiển, mảng, ma trận, vòng lặp và xử lý dữ liệu.
 
 ## 👨‍🎓 Thành viên nhóm
 - Nguyễn Phương Thảo – 31221023052 – Trưởng nhóm  
@@ -16,7 +16,7 @@ Chương trình gồm nhiều bài tập nhỏ, cho phép người dùng lựa c
 - **Bài 4:** Tính bán kính hình cầu có cùng thể tích với hình hộp chữ nhật a×b×c.  
 - **Bài 5:** Sử dụng các quả cân (1g, 2g, 4g, …, 256g) để cân vật nặng M < 512g.  
 - **Bài 6:** Kiểm tra xem trong ma trận vuông có hai hàng nào trùng nhau không.  
-- **Bài 7:** Tạo bảng điểm tốt nghiệp của sinh viên với điểm trung bình, xếp loại và thứ hạng:contentReference[oaicite:1]{index=1}.
+- **Bài 7:** Tạo bảng điểm tốt nghiệp của sinh viên với điểm trung bình, xếp loại và thứ hạng.
 
 ## 📊 Kết quả kỳ vọng
 - Củng cố kiến thức cơ bản về lập trình C#.  
